@@ -1,0 +1,31 @@
+  <form class="form-signin" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <div
+      class="form-group"
+      [ngClass]="{'form-has-error': form.get('login').invalid && form.get('login').touched}"
+    >
+      <label for="login" class="sr-only">Login</label>
+      <input type="text" id="login" class="form-control" placeholder="Login" formControlName="login" required autofocus>
+      <span *ngIf="form.get('login').invalid && form.get('login').touched">
+        <span *ngIf="form.get('login')['errors']['required']">Login cannot be empty</span>
+      </span>
+    </div>
+    <div
+      class="form-group"
+      [ngClass]="{'form-has-error': form.get('password').invalid && form.get('password').touched}"
+    >
+      <label for="password" class="sr-only">Password</label>
+      <input type="password" id="password" class="form-control" placeholder="Password" formControlName="password" required>
+      <span *ngIf="form.get('password').invalid && form.get('login').touched">
+        <span *ngIf="form.get('password')['errors']['required']">Password cannot be empty</span>
+      </span>
+    </div>
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+  </form>
