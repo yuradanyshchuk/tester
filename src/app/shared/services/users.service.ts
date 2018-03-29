@@ -1,5 +1,5 @@
-import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class UsersService {
@@ -7,9 +7,11 @@ export class UsersService {
   private urlLogIn = 'http://vps9615.hyperhost.name:443/api/login/index';
   private urlLogOut = 'http://vps9615.hyperhost.name:443/api/login/logout';
   private urlStatusLogIn = 'http://vps9615.hyperhost.name:443/api/login/isLogged';
+  private urlGetSubjects = 'http://vps9615.hyperhost.name:443/api/Subject/getRecords';
 
-
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
   getLogin(login: string, password: string) {
     const body = {username: login, password: password};
@@ -22,5 +24,9 @@ export class UsersService {
 
   outLogin() {
     return this.http.get(this.urlLogOut);
+  }
+
+  getSubjects() {
+    return this.http.get(this.urlGetSubjects);
   }
 }

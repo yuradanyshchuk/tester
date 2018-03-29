@@ -11,12 +11,14 @@ import {UsersService} from './shared/services/users.service';
 import { AdminComponent } from './admin/admin.component';
 import { StudentComponent } from './student/student.component';
 import {AuthService} from './shared/services/auth.service';
+import { SubjectComponent } from './admin/subject/subject.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminComponent,
-    StudentComponent
+    StudentComponent,
+    SubjectComponent
   ],
   imports: [
     NgbModule.forRoot(),

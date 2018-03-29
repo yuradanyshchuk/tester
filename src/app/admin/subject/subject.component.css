@@ -1,0 +1,28 @@
+.card {
+  background-color: #fff;
+  border: 0 solid #eee;
+  border-radius: 0;
+}
+.card-body {
+  padding: 1.25rem;
+}
+.card-header {
+  padding: 1rem 1.25rem;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+.card-header:first-child {
+  border-radius: 0 0 0 0;
+}
+.card-header-transparent {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-bottom: none;
+}
+table {
+  font-size: 0.9em;
+  color: #666;
+}
+.table-icon:hover {
+  color: #33b35a;
+  font-weight: bold;
+}
